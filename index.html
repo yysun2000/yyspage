@@ -6,36 +6,83 @@
   *{
     font-size:20px;
   }
+  .nav-extended{
+    background-color: white;
+      box-shadow : none;
+      border: 0px;
+      border-bottom-width: 1px;
+      border-color: #aaa;
+      border-style: solid;
+  }
+  .nav-extended a{
+    height:56px;
+    color:black !important;
+  }
+
+  .logo{
+    display: inline-block;
+    vertical-align: middle;
+    margin:0px;
+  }
+  img.logo{
+    height:56px !important;
+  }
+
+  .logo.divider{
+    margin:10px;
+    border:0px;
+    border-left-width: 1px;
+    height:30px !important;
+    border-style: solid;
+    border-left-color : #aaa;
+  }
+  .logo.leftborder{
+  }
+  .nav-extended{
+  }
+
+  .logo.right{padding-left:5px;padding-right:5px;}
+  .nowrap{white-space:nowrap}
+  .nav-wrapper{
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .wrapper{
+    margin: 0 auto;
+    max-width: 1000px;
+  }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-  <body>
+  <body style="background-color:#eee">
     <nav class="nav-extended">
       <div class="nav-wrapper">
-        <a href="#" class=" brand-logo left">YYS | YouYoungSun</a>
+        <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><div class="logo divider"></div><div class="logo flow-text">0Sun</div></a>
         <div class="right">
-          <a href="#" class=" right">button1</a>
-          <a href="#" class=" right">button2</a>
-          <a href="#" class=" right">button3</a>
+          <a href="#" class="logo right flow-text"><i class="material-icons">favorite_border</i></a>
+          <a href="#" class="logo right flow-text"><i class="material-icons">business_center</i></a>
+          <a href="#" class="logo right flow-text"><i class="material-icons">face</i></a>
         </div>
       </div>
     </nav>
-    <div class="row">
-      <div class="col s12 m3">유영선</div>
-      <div class="col s12 m9">
+    <div class="wrapper">
+    <div class="row" style="padding:30px 0px 30px 0px;">
+      <div class="col s6 m5" style="text-align:center;"><img class="responsive-img circle s6" src="img/yys.png"/></div>
+      <div class="col s6 m7">
         <div class="row">
-          <div class="col m3">유영선</div>
-          <div class="col s12 m3">팔로우</div>
+          <div class="col s12 m3"><span class="flow-text">0Sun</span></div>
+          <div class="col s12 m3"><a class="waves-effect waves-light btn flow-text"><span class="nowrap">팔로우</span></a></div>
         </div>
         <div class="row">
-          <div class="col m2">게시물 15</div>
-          <div class="col m2">프로젝트 5</div>
-          <div class="col m2">연구개발 5</div>
-        </div>
-        <div class="row">
-          <div class="col l12">유영선의 포트폴리오</div>
+          <div class="col m3"><span class="flow-text nowrap">게시물</span><span class="flow-text nowrap">15</span></div>
+          <div class="col m3"><span class="flow-text nowrap">프로젝트</span><span class="flow-text nowrap">5</span></div>
+          <div class="col m3"><span class="flow-text nowrap">연구개발</span><span class="flow-text nowrap">5</span></div>
         </div>
       </div>
+      <div class="row">
+        <div class="col s12 m6">유영선의 포트폴리오</div>
+      </div>
+
     </div>
 
     <div class="row">
@@ -50,6 +97,8 @@
       <div class="col s4">3</div>
     </div>
   </div>
+</div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/materialize.js"></script>
   </body>
