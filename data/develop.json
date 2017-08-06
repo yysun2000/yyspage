@@ -1,0 +1,138 @@
+[{
+  "title":"Printmade2 내장 스크립트 (C++, Javascript)",
+  "date":"2013-01-30 ~ 2013-05-20",
+  "content":["- 화면의 변화 없이 프린트메이드 내부 스크립트를 추가함으로써 화면 내용 수정할 수 있는 기능 고안 및 개발",
+    "- 예전에 적용된 프린트메이드를 해당 방식으로 변환"],
+  "result":"프린트메이드의 단점을 제거",
+  "language":"Javascript,C++",
+  "firstImage":"img/develop/innerscript/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"Printmade2 ActiveX 개발 (C++) ",
+  "date":"2013-02-10 ~ 2013-03-20",
+  "content":["- Delphi 기반의 Printmade2 ActiveX를 C++ 기반으로 변환 ",
+    "- 예전에 적용된 프린트메이드를 해당 방식으로 변환"],
+  "result":"Delphi 뿐만아니라 C++로 프린트메이드 플러그인 개발이 가능해짐 ",
+  "language":"C++",
+  "firstImage":"img/develop/activex/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"Nagosoft 연구개발팀 라이센스 페이지 (NodeJS, Javascript, MongoDB )",
+  "date":"2015-04-03 ~ 2015-08-01",
+  "content":["- 화면의 변화 없이 프린트메이드 내부 스크립트를 추가함으로써 화면 내용 수정할 수 있는 기능 고안 및 개발 "],
+  "result":"라이센스 발급이 효율성 높아짐",
+  "language":"NodeJS, Javascript, MongoDB",
+  "firstImage":"img/develop/license/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"Nagosoft 연구개발팀 지원 사이트 (PHP, Javascript,MySQL,HTML/CSS)",
+  "date":"2015-10-03 ~ 2016-09-01",
+  "content":["- Printmade 고객 지원 및 기술지원 홈페이지 개발 "],
+  "result":"고객지원팀 업무 효율 증가 및 협업이 가능해짐 ",
+  "language":"PHP, Javascript,MySQL,HTML/CSS",
+  "firstImage":"img/develop/support/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":" Printmade3 Viewer 개발 ( C++ (Qt Framework) )",
+  "date":"2015-03-07 ~ 2015-08-30 ",
+  "content":["- Qt 기본 제공 프린트 다이얼로그 UI 및 기능 변경","- 내부적으로 커스터마이징이 가능한 스크립트를 추가할 수 있도록 수정"],
+  "result":"고객지원팀 업무 효율 증가 및 협업이 가능해짐 ",
+  "language":"C++ (Qt Framework)",
+  "firstImage":"img/develop/viewer/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"MainStream Mobile 앱 개발(NodeJS, Ionic Framework, HTML/CSS)",
+  "date":"2015-09-23 ~ 2015-12-28 ",
+  "content":["- Ionic Framework를 통해서 모바일 UI 개발"],
+  "result":"MainStream과 계약 체결 ",
+  "language":"NodeJS, Ionic Framework, HTML/CSS",
+  "firstImage":"img/develop/mainstream/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"Printmade3 Bridge 개발  (C++ (Qt Framework, Win32 API), Javascript(Websocket))",
+  "date":"2015-01-07 ~ 2015-08-30",
+  "content":["- URI Scheme 을 이용한 실행방식 연구 및 개발",
+    "- WebSocket 을 통하여 브라우저와 Native 프로그램이 통신하는 방식 연구 및 개발",
+    "- Cross-Domain 정책을 우회하는 기법 연구 및 개발",
+    "- 고객에 맞추어 프로그램 커스터마이징 및 유지보수",
+    "- Window, Mac, Linux에서 작동되도록 개발 "],
+  "result":["Printmade3를 Non-Active 방식으로 변환",
+    "다양한 고객사에 납품 (기업은행,신한카드,신한은행,수협은행,시티은행,대구은행,학교알리미,행자부,한우리,유진투자증권,키야트,하나투어)"],
+  "language":"C++ (Qt Framework, Win32 API), Javascript(Websocket)",
+  "firstImage":"img/develop/bridge/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"Printmade3 Donut 개발  (C++ (Qt Framework), Javascript(Websocket) )",
+  "date":"2016-12-20 ~ 2016-02-14 ",
+  "content":[
+    "- WebSocket과 상주형 로컬서버 프로그램 설계 및 개발",
+    "- Cross-Domain 정책을 우회하는 기법 연구 및 개발",
+    "- 웹 브라우저 localStorage 통한 데이터 저장 및 추출 방법 연구 및 개발" ],
+  "result":["Bridge의 단점을 제거"],
+  "language":"C++ (Qt Framework, Win32 API), Javascript(Websocket)",
+  "firstImage":"img/develop/donut/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"easyPrint 개발 (Javascript, NodeJS, HTML5/CSS)",
+  "date":"2016-03-01 ~ 2017-03-30",
+  "content":[
+    "- HTML을 Canvas 형태로 변환시키는 라이브러리 개발",
+    "- 사용자 편의 기능 UI 개발",
+    "- 최신 브라우저 및 모바일에서도 작동되도록 개발"  ],
+  "result":["HTML5 기반의 프린트 솔루션을 통해서 설치없이 프린트 서비스를 이용 가능","산업은행, 신한은행에서 솔루션 납품"],
+  "language":"Javascript, NodeJS, HTML5/CSS",
+  "firstImage":"img/develop/easyprint/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+},
+{
+  "title":"PrintEasy, ViewEasy 설계",
+  "date":"2017-05-10 ~ 2017-08-30",
+  "content":[
+    "- easyPrint의 코드를 정리하여 모듈화",
+    "- 기존의 자바스크립트 코드를 ES6으로 변환"
+],
+  "result":["모바일앱으로 변환이 가능해짐 ","프린트메이드 코드 가독성 향상"],
+  "language":"Javascript, NodeJS, HTML5/CSS",
+  "firstImage":"img/develop/printeasy/1.jpg",
+  "DetailImages":[{
+    "image":"",
+    "descriptions":""
+  }]
+}
+
+]
