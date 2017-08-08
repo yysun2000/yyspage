@@ -2,16 +2,20 @@
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/materialize.css"></link>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/materialize.js"></script>
   <style>
+  @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
   *{
-    font-size:20px;
+    font-family: 'Noto Sans KR';
   }
   .nav-extended{
     background-color: white;
       box-shadow : none;
       border: 0px;
       border-bottom-width: 1px;
-      border-color: #aaa;
+      border-color: #eee;
       border-style: solid;
   }
   .nav-extended a{
@@ -29,12 +33,12 @@
   }
 
   .logo.divider{
-    margin:10px;
+    margin:10px 20px 10px 20px;
     border:0px;
     border-left-width: 1px;
     height:30px !important;
     border-style: solid;
-    border-left-color : #aaa;
+    border-left-color : #eee;
   }
   .logo.leftborder{
   }
@@ -49,16 +53,170 @@
   }
   .wrapper{
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 850px;
   }
+  .portfoliolist{
+    margin:0 auto !important;
+    text-align: center !important;
+  }
+  .col.s4.portfolio{
+    float:none !important;
+    padding : 20px;
+    border-radius: 20px;
+    background-color: white;
+    display:inline-block;
+    background-size: 100%;background-position:center center;background-repeat:no-repeat;
+    margin:10px;
+  }
+  @media screen and (min-width: 850px) {
+    .col.s4.portfolio{
+      padding : 0px;
+      width:250px !important;
+      height:250px !important;
+    }
+    .total{
+      display:none;
+    }
+    .brand-logo{
+      margin-left:30px;
+    }
+  }
+
+  @media screen and (max-width: 850px) and (min-width: 760px) {
+    .col.s4.portfolio{
+      width:220px !important;
+      height:220px !important;
+    }
+    .total{
+      display:none;
+    }
+    .brand-logo{
+      margin-left:30px;
+    }
+  }
+
+    @media screen and (max-width: 760px) and (min-width: 640px) {
+      .col.s4.portfolio{
+        display:inline-block;
+        width:180px !important;
+        height:180px !important;
+      }
+      .followbutton{
+        display: block;
+        width:100%;
+      }
+      .followbutton>a{
+        width:100%;
+      }
+      .followbutton>a>div{
+        width:100%;
+      }
+      .totaltop{
+        display:none;
+      }
+      .total{
+        display:block;
+      }
+
+      .brand-logo{
+        margin-left:30px;
+      }
+    }
+
+      @media screen and (max-width: 640px) and (min-width: 400px) {
+        .col.s4.portfolio{
+          display:inline-block;
+          width:100px !important;
+          height:100px !important;
+        }
+        .totaltop{
+          display:none;
+        }
+        .brand-logo{
+          margin-left:20px;
+        }
+        .brand-logo-right{
+          margin-right:20px;
+        }
+      }
+
+      @media screen and (max-width: 400px) and (min-width: 365px) {
+        .col.s4.portfolio{
+          display:inline-block;
+          width:90px !important;
+          height:90px !important;
+        }
+        .totaltop{
+          display:none;
+        }
+        .brand-logo{
+          margin-left:20px;
+        }
+        .brand-logo-right{
+          margin-right:20px;
+        }
+      }
+
+      @media screen and (max-width: 365px) {
+        .col.s4.portfolio{
+          display:inline-block;
+          width:100% !important;
+          height:300px !important;
+        }
+        .totaltop{
+          display:none;
+        }
+        .brand-logo{
+          margin-left:20px;
+        }
+        .brand-logo-right{
+          margin-right:20px;
+        }
+
+        .logo.divider, .logo.divider+div{
+          display:none;
+        }
+
+      }
+      .total{
+        width:100%;
+        border:0;
+        padding-top:10px;
+        border-color: #eee;
+        border-style:solid;
+        border-top-width: 1px;
+      }
+      .total > div >div{
+        text-align: center;
+        font-size:16px;
+        color:#252525;
+      }
+      .total > div >div:first-child{
+        font-size:14px;
+        color:#999;
+      }
+
+      .totaltop{
+        font-size:14px;
+      }
+
+      .totaltop > div > span{
+        font-weight:700;
+      }
+
+      .totaltop > div > span:first-child{
+        font-weight:300;
+      }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="js/ejs.min.js"></script>
 </head>
-  <body style="background-color:#eee">
+  <body style="background-color:#fafafa">
+    <!-- Modal Structure -->
     <nav class="nav-extended">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><div class="logo divider"></div><div class="logo flow-text">0Sun</div></a>
-        <div class="right">
+        <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><div class="logo divider"></div><div class="logo flow-text">YoungSun</div></a>
+        <div class="brand-logo-right right">
           <a href="#" class="logo right flow-text"><i class="material-icons">favorite_border</i></a>
           <a href="#" class="logo right flow-text"><i class="material-icons">business_center</i></a>
           <a href="#" class="logo right flow-text"><i class="material-icons">face</i></a>
@@ -66,40 +224,61 @@
       </div>
     </nav>
     <div class="wrapper">
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+      </div>
+    </div>
     <div class="row" style="padding:30px 0px 30px 0px;">
       <div class="col s6 m5" style="text-align:center;"><img class="responsive-img circle s6" src="img/yys.png"/></div>
       <div class="col s6 m7">
         <div class="row">
-          <div class="col s12 m3"><span class="flow-text">0Sun</span></div>
-          <div class="col s12 m3"><a class="waves-effect waves-light btn flow-text"><span class="nowrap">팔로우</span></a></div>
+          <div class="col s12 m4"><span class="flow-text">YoungSun</span></div>
+          <div class="followbutton col s12 m4"><a class="waves-effect waves-light btn flow-text" style="background-color:#3897f0;"><div class="nowrap">팔로우</div></a></div>
         </div>
-        <div class="row">
-          <div class="col m3"><span class="flow-text nowrap">게시물</span><span class="flow-text nowrap">15</span></div>
-          <div class="col m3"><span class="flow-text nowrap">프로젝트</span><span class="flow-text nowrap">5</span></div>
-          <div class="col m3"><span class="flow-text nowrap">연구개발</span><span class="flow-text nowrap">5</span></div>
+        <style>
+
+        </style>
+        <div class="totaltop row">
+          <div class="col m4"><span class="nowrap">게시물</span> <span class="nowrap totalcnt">15</span></div>
+          <div class="col m4"><span class="nowrap">프로젝트</span> <span class="nowrap projectcnt"></span></div>
+          <div class="col m4"><span class="nowrap">연구개발</span> <span class="nowrap privatecnt">5</span></div>
         </div>
       </div>
-      <div class="row">
+      <div class="comment row">
         <div class="col s12 m6">유영선의 포트폴리오</div>
       </div>
 
     </div>
 
-    <div class="row">
-      <div class="col s4"><div>게시물</div><div>15</div></div>
-      <div class="col s4"><div>게시물</div><div>15</div></div>
-      <div class="col s4"><div>게시물</div><div>15</div></div>
+
+    <div class="row total">
+      <div class="col s4"><div>게시물</div><div class="totalcnt">15</div></div>
+      <div class="col s4"><div>프로젝트</div><div class="projectcnt"></div></div>
+      <div class="col s4"><div>게시물</div><div class="privatecnt">15</div></div>
     </div>
+
   <div class="row">
-    <div class="col s12">
-      <div class="col s4">1</div>
-      <div class="col s4">2</div>
-      <div class="col s4">3</div>
+    <div class="portfoliolist col s12" >
     </div>
   </div>
-</div>
+    <script>
+      var project = $.ajax({
+        url: "data/project.json",
+        success:function(data){
+          $(".projectcnt").append($(data).length);
+          $(data).each(function(){
+            $(".portfoliolist").append('<div class="col s4 portfolio" style="background-image:url('+this.firstImage+');"></div>');
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/materialize.js"></script>
+          })
+        }
+      })
+//      $(".portfoliolist").append('<div class="col s4"><%= people[i] %></div>');
+    </script>
+    <div></div>
   </body>
 </html>

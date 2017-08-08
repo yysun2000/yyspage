@@ -5,8 +5,11 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/shinhancard/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/shinhancard/2013/2.PNG",
+    "descriptions":"신한카드 프린트메이드 뷰어 화면"
+  },{
+    "image":"img/portfolio/shinhancard/2013/3.PNG",
+    "descriptions":"신한카드 미리보기 화면"
   }]
 },
 {
@@ -16,8 +19,11 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/suhyup/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/suhyup/K-015.png",
+    "descriptions":"수협 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/suhyup/K-016.png",
+    "descriptions":"수협 인쇄 이후 화면"
   }]
 },
 {
@@ -27,8 +33,17 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/shinhanbank/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/shinhanbank/2016/K-004.png",
+    "descriptions":"신한은행 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/shinhanbank/2016/K-005.png",
+    "descriptions":"신한은행 프린트메이드 화면"
+  },{
+    "image":"img/portfolio/shinhanbank/2016/K-013.png",
+    "descriptions":"HTML5 기반 EasyPrint 대기화면"
+  },{
+    "image":"img/portfolio/shinhanbank/2016/K-014.png",
+    "descriptions":"HTML5 기반 EasyPrint 화면"
   }]
 },
 {
@@ -38,8 +53,14 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/citi/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/citi/2016/K-004.png",
+    "descriptions":"씨티은행 프린트메이드 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/citi/2016/K-005.png",
+    "descriptions":"씨티은행 프린트메이드 인쇄 대기화면"
+  },{
+    "image":"img/portfolio/citi/2016/K-006.png",
+    "descriptions":"씨티은행 프린트메이드 인쇄화면"
   }]
 },
 {
@@ -49,8 +70,14 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/dgb/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/dgb/2013/2.png",
+    "descriptions":"프린트메이드 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/dgb/2013/3.png",
+    "descriptions":"프린트메이드 페이지 인쇄 화면"
+  },{
+    "image":"img/portfolio/dgb/2013/4.png",
+    "descriptions":"프린트메이드 팝업 인쇄 화면"
   }]
 },
 {
@@ -60,8 +87,8 @@
   "language":"Javascript,CSS,HTML,Delphi,Java",
   "firstImage":"img/portfolio/krx/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/krx/2013/pdf.png",
+    "descriptions":"프린트메이드로 pdf 출력 결과"
   }]
 },
 {
@@ -71,8 +98,8 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/ibk/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/ibk/1.png",
+    "descriptions":"Printmade3 적용"
   }]
 },
 {
@@ -82,8 +109,8 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/kcri/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/kcri/1.jpg",
+    "descriptions":"Printmade2 적용"
   }]
 },
 {
@@ -93,8 +120,8 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/kira/1.gif",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/kira/1.gif",
+    "descriptions":"Printmade2 적용"
   }]
 },
 {
@@ -104,8 +131,17 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/ritis/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/ritis/2014/1.png",
+    "descriptions":"프린트메이드2 인쇄화면"
+  },{
+    "image":"img/portfolio/ritis/2014/1.png",
+    "descriptions":"프린트메이드2 인쇄화면"
+  },{
+    "image":"img/portfolio/ritis/2014/1.png",
+    "descriptions":"프린트메이드2 전 인쇄화면"
+  },{
+    "image":"img/portfolio/ritis/2014/1.png",
+    "descriptions":"프린트메이드2 오브젝트(ActiveX) 인쇄화면"
   }]
 },
 {
@@ -115,8 +151,11 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/keris/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/keris/2013/1.png",
+    "descriptions":"프린트메이드2 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/keris/2013/2.png",
+    "descriptions":"프린트메이드2 인쇄 화면"
   }]
 },
 {
@@ -126,19 +165,19 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/kiat/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/kiat/1.jpg",
+    "descriptions":"Printmade2 적용"
   }]
 },
 {
   "title":"농심 통합그룹웨어 프로젝트",
   "date":"2014-01-24 ~ 2014-12-02",
-  "content":"Printmade2 적용",
+  "content":"그룹웨어에 Printmade2 적용",
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/nongshim/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/nongshim/2014/Webkit.png",
+    "descriptions":"그룹웨어에서 출력한 결과"
   }]
 },
 {
@@ -148,8 +187,8 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/kd/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/kd/1.png",
+    "descriptions":"Printmade2 적용"
   }]
 },
 {
@@ -159,19 +198,25 @@
   "language":"Javascript,C++,.NET",
   "firstImage":"img/portfolio/bnk/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/bnk/2014/2.png",
+    "descriptions":"프린트메이드 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/bnk/2014/3.png",
+    "descriptions":"프린트메이드 결과화면"
   }]
 },
 {
   "title":"신한은행 기업뱅킹시스템 재구축 프로젝트",
   "date":"2013-03-27 ~ 2013-07-30",
-  "content":"Printmade3 적용",
+  "content":"Printmade3 적용 (현재는 Printmade2와 Printmade3가 동시에 적용되어있음.(2017년 기준))",
   "language":"Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/shinhanbank/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/shinhanbank/2014/3.png",
+    "descriptions":"프린트메이드2 인쇄 이전"
+  },{
+    "image":"img/portfolio/shinhanbank/2014/3.png",
+    "descriptions":"프린트메이드3 인쇄 이후"
   }]
 },
 {
@@ -181,8 +226,11 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/keris/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/keris/2015/K-017.png",
+    "descriptions":"프린트메이드3 인쇄 전"
+  },{
+    "image":"img/portfolio/keris/2015/K-018.png",
+    "descriptions":"프린트메이드3 인쇄 화면"
   }]
 },
 {
@@ -192,8 +240,11 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/moi/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/moi/2015/1.png",
+    "descriptions":"프린트메이드3 인쇄 전"
+  },{
+    "image":"img/portfolio/moi/2015/2.png",
+    "descriptions":"프린트메이드3 인쇄 후"
   }]
 },
 {
@@ -203,8 +254,14 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/shinhancard/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/shinhancard/2016/K-001.png",
+    "descriptions":"신한카드 인쇄 전"
+  },{
+    "image":"img/portfolio/shinhancard/2016/K-002.png",
+    "descriptions":"신한카드 인쇄 대기 화면"
+  },{
+    "image":"img/portfolio/shinhancard/2016/K-003.png",
+    "descriptions":"프린트메이드3 구동 화면"
   }]
 },
 {
@@ -214,8 +271,8 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/hanuri/1.gif",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/hanuri/1.gif",
+    "descriptions":"Printmade3 적용"
   }]
 },
 {
@@ -225,8 +282,8 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/youjin/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/youjin/1.png",
+    "descriptions":"Printmade3 적용"
   }]
 },
 {
@@ -236,8 +293,14 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/hanatour/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/hanatour/2016/K-003.png",
+    "descriptions":"하나투어 프린트메이드 인쇄전 화면"
+  },{
+    "image":"img/portfolio/hanatour/2016/K-002.png",
+    "descriptions":"하나투어 프린트메이드 대기화면"
+  },{
+    "image":"img/portfolio/hanatour/2016/K-004.png",
+    "descriptions":"하나투어 프린트메이드 화면"
   }]
 },
 {
@@ -247,8 +310,8 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/kisa/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/kisa/1.png",
+    "descriptions":"HTML5기반 EasyPrint 개발"
   }]
 },
 {
@@ -258,8 +321,11 @@
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/ibk/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/ibk/2016/K-009.png",
+    "descriptions":"프린트메이드 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/ibk/2016/K-010.png",
+    "descriptions":"프린트메이드3 뷰어 화면"
   }]
 },
 {
@@ -269,8 +335,11 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/kdb/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/kdb/2016/K-011.png",
+    "descriptions":"산업은행 인쇄 전 화면"
+  },{
+    "image":"img/portfolio/kdb/2016/K-012.png",
+    "descriptions":"산업은행 인쇄 이후 화면"
   }]
 },
 {
@@ -280,8 +349,8 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/keb/1.jpg",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/keb/2013/1.png",
+    "descriptions":"Printmade2 적용"
   }]
 },
 {
@@ -291,19 +360,19 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/ibk/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/ibk/1.png",
+    "descriptions":"오픈뱅킹 프린트메이드3 적용"
   }]
 },
 {
   "title":"포스코 프린트메이드 3 도입",
   "date":"2017-07~10 ~ 2017-08-30",
-  "content":"Printmade3 튜닝 및 적용",
+  "content":"Printmade3 튜닝 및 적용 (세션부분 튜닝)",
   "language":"Java,Javascript,CSS,HTML,C++",
   "firstImage":"img/portfolio/posco/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/posco/1.png",
+    "descriptions":"Printmade3 튜닝 및 적용"
   }]
 },
 {
@@ -313,8 +382,8 @@
   "language":"Java,Javascript,CSS,HTML",
   "firstImage":"img/portfolio/yeram/1.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/portfolio/yeram/2013/2.JPG",
+    "descriptions":"Printmade2 적용화면"
   }]
 }
 ]
