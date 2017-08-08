@@ -2,8 +2,10 @@
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/materialize.css"></link>
+  <link rel="stylesheet" href="css/swiper.min.css"></link>
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.js"></script>
+  <script src="js/swiper.min.js"></script>
   <style>
   @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
@@ -31,7 +33,9 @@
   img.logo{
     height:56px !important;
   }
-
+  .swiper-pagination-bullet{
+    background-color: #aaa;
+  }
   .logo.divider{
     margin:10px 20px 10px 20px;
     border:0px;
@@ -68,7 +72,26 @@
     background-size: 100%;background-position:center center;background-repeat:no-repeat;
     margin:10px;
   }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
   @media screen and (min-width: 850px) {
+    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{width:70% !important;}
     .col.s4.portfolio{
       padding : 0px;
       width:250px !important;
@@ -83,6 +106,7 @@
   }
 
   @media screen and (max-width: 850px) and (min-width: 760px) {
+    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{width:70% !important;}
     .col.s4.portfolio{
       width:220px !important;
       height:220px !important;
@@ -121,9 +145,17 @@
       .brand-logo{
         margin-left:30px;
       }
+
     }
 
       @media screen and (max-width: 640px) and (min-width: 400px) {
+        .popCloseButton{width:80px !imporant;z-index:999999 !important;color:#aaa!important;right:15px!important;}
+            div.photowrap{width:100% !important;}
+            div.photowrap > div{width:100% !important;}
+            div.photowrap{height:70% !important;}
+            div.content {height:20% !important;}
+            div.content {width:100% !important;}
+            .modal.modal-fixed-footer{width:100% !important;height:100% !important;top:0px !important;}
         .col.s4.portfolio{
           display:inline-block;
           width:100px !important;
@@ -138,9 +170,17 @@
         .brand-logo-right{
           margin-right:20px;
         }
+
       }
 
       @media screen and (max-width: 400px) and (min-width: 365px) {
+        .popCloseButton{width:80px !imporant;z-index:999999 !important;color:#aaa!important;right:15px!important;}
+            div.photowrap{width:100% !important;}
+            div.photowrap > div{width:100% !important;}
+            div.photowrap{height:50% !important;}
+            div.content {height:45% !important;}
+            div.content {width:100% !important;}
+            .modal.modal-fixed-footer{width:100% !important;height:100% !important;top:0px !important;}
         .col.s4.portfolio{
           display:inline-block;
           width:90px !important;
@@ -158,6 +198,13 @@
       }
 
       @media screen and (max-width: 365px) {
+        .popCloseButton{width:80px !imporant;z-index:999999 !important;color:#aaa!important;right:15px!important;}
+            div.photowrap{width:100% !important;}
+            div.photowrap > div{width:100% !important;}
+            div.photowrap{height:50% !important;}
+            div.content {height:45% !important;}
+            div.content {width:100% !important;}
+            .modal.modal-fixed-footer{width:100% !important;height:100% !important;top:0px !important;}
         .col.s4.portfolio{
           display:inline-block;
           width:100% !important;
@@ -212,6 +259,7 @@
   <script src="js/ejs.min.js"></script>
 </head>
   <body style="background-color:#fafafa">
+    <div id="dimmed" onclick="closePopup()" style="width:100%;height:100%;position:fixed;background-color:black;z-index:999;opacity:.5;display:none;"></div>
     <!-- Modal Structure -->
     <nav class="nav-extended">
       <div class="nav-wrapper">
@@ -224,15 +272,14 @@
       </div>
     </nav>
     <div class="wrapper">
-    <div id="modal1" class="modal modal-fixed-footer">
-      <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
+      <div class="popup">
+
       </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-      </div>
-    </div>
+        <script>
+        setTimeout(function(){
+        },500)
+        </script>
+
     <div class="row" style="padding:30px 0px 30px 0px;">
       <div class="col s6 m5" style="text-align:center;"><img class="responsive-img circle s6" src="img/yys.png"/></div>
       <div class="col s6 m7">
@@ -267,12 +314,51 @@
     </div>
   </div>
     <script>
+    var currentSwiper;
+    function closePopup(){
+      $("div[id*='modal']").hide();
+      $("#dimmed").hide();
+    }
+    function togglePopup(selector){
+      if($(selector).css("display") == "none"){
+        $(selector).show();
+        setTimeout(function(){
+          currentSwiper = new Swiper(selector+" .photowrap", {
+             pagination: '.swiper-pagination',
+             paginationClickable: true
+           });
+        },1);
+        $("#dimmed").show();
+        $(".btn").css("z-index","-1");
+      }else{
+      $("#dimmed").hide();
+        $(selector).hide();
+        $(".btn").css("z-index","1");
+      }
+    }
       var project = $.ajax({
         url: "data/project.json",
         success:function(data){
           $(".projectcnt").append($(data).length);
-          $(data).each(function(){
-            $(".portfoliolist").append('<div class="col s4 portfolio" style="background-image:url('+this.firstImage+');"></div>');
+          $(data).each(function(idx){
+            $(".portfoliolist").append('<div onclick="togglePopup(\'#modal'+idx+'\')" class="col s4 portfolio" style="background-image:url('+this.firstImage+');"></div>');
+            $(".popup").append('<div id="modal'+idx+'" class="modal modal-fixed-footer" style="width: 90%;height: 80%;max-height: 100%;display:none;box-shadow:none;z-index:99999;"></div>')
+            var target = "#modal"+idx;
+            $(target).append('<div class="modal-content" style="padding:0px;height:100%;"></div>');
+            $(target+" > div").append('<div class="photowrap" style="height:100%;overflow:hidden;width:70%;float:left;display:inline-block;"></div>');
+            $(target+" > div > .photowrap").append('<div class="photo swiper-wrapper" style="white-space: nowrap;width:70%;float:left;display:inline-block;"></div>');
+
+            for(var i=0;i<this.DetailImages.length;i++){
+              $(target+" > div .photo").append('<div class="swiper-slide" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"></div>');
+            }
+            $(target+" > div> .photowrap").append('<div class="swiper-pagination"></div>');
+
+            $(target+" > div").append('<div class="content" style="width:30%;float:left;display:inline-block;"></div>');
+            $(target+" > div .content").append('<div style="padding:20px;display:block;height:10%;border:0px;font-size:12px;border-color:#eee;border-bottom-width:1px;border-style:solid;">'+this.title+'</div>');
+            $(target+" > div .content").append('<div style="padding:20px;display:block;height:70%;font-size:12px;">'+this.content+'</div>');
+            $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:10%;color:#aaa;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+("#"+this.language.split(",").join(" #"))+'</div>');
+            $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:5%;color:#aaa;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+this.date+'</div>');
+            $(target+" > div .content").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
 
           })
         }
