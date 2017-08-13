@@ -10,9 +10,17 @@
   <script src="js/swiper.min.js"></script>
   <style>
   @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-
   *{
     font-family: 'Noto Sans KR';
+  }
+  #toast-container{
+    z-index:99999999;
+  }
+  .comment.row div{
+    padding-left:0px !important;
+  }
+  div.descriptions {
+    display:none !important;
   }
   .nav-extended{
     background-color: white;
@@ -92,7 +100,26 @@
     -webkit-align-items: center;
     align-items: center;
 }
+
+  .myprofile .modal-content{
+    padding:0px;height:100% !important;white-space:nowrap;overflow:hidden !important;
+  }
+  .myprofile .myphoto{
+    padding:0px;height:100%;width:45%;display:inline-block;background-repeat:no-repeat;background-size:contain;background-position:center center;
+  }
+  .myprofile .mycontent{
+    padding:0px;height:100%;width:55%;display:inline-block;overflow:scroll
+  }
   @media screen and (min-width: 850px) {
+
+    #toast-container {
+      top: auto !important;
+      right: auto !important;
+      bottom: 10%;
+      left:7%;
+    }
+
+    div.rcontent {overflow:hidden;}
   div.photowrap{width:70% !important;}
   div.photowrap{height:100% !important;}
   div.content {width:30% !important;}
@@ -112,6 +139,15 @@
   }
 
   @media screen and (max-width: 850px) and (min-width: 760px) {
+
+
+    #toast-container {
+      top: auto !important;
+      right: auto !important;
+      bottom: 10%;
+      left:7%;
+    }
+
   div.photowrap{width:70% !important;}
   div.photowrap{height:100% !important;}
   div.content {width:30% !important;}
@@ -134,6 +170,8 @@
     div.photowrap{height:100% !important;}
     div.content {width:30% !important;}
     div.content {height:100% !important;}
+    div.rcontent {overflow:hidden;}
+
       .col.s4.portfolio{
         display:inline-block;
         width:180px !important;
@@ -163,6 +201,20 @@
     }
 
       @media screen and (max-width: 640px) and (min-width: 400px) {
+        .myprofile .modal-content{
+          white-space:normal;overflow:auto !important;
+        }
+        .myprofile .myphoto{
+          width:100%;
+        }
+        .myprofile .mycontent{
+          width:100%;
+          overflow:hidden;
+        }
+
+                .comment.row div{
+                  padding-left:20px !important;
+                }
         .popCloseButton{width:80px !imporant;z-index:999999 !important;color:#aaa!important;right:15px!important;}
             div.photowrap > div{width:100% !important;}
             div.photowrap{width:100% !important;}
@@ -170,6 +222,7 @@
             div.content {width:100% !important;}
             div.content {height:20% !important;}
             .modal.modal-fixed-footer{width:100% !important;height:100% !important;top:0px !important;}
+            div.rcontent {overflow:scroll;}
         .col.s4.portfolio{
           display:inline-block;
           width:100px !important;
@@ -188,12 +241,26 @@
       }
 
       @media screen and (max-width: 400px) and (min-width: 365px) {
+        .myprofile .modal-content{
+          white-space:normal;overflow:auto !important;
+        }
+        .myprofile .myphoto{
+          width:100%;
+        }
+        .myprofile .mycontent{
+          width:100%;
+          overflow:hidden;
+        }
+              .comment.row div{
+                padding-left:20px !important;
+              }
         .popCloseButton{width:80px !imporant;z-index:999999 !important;color:#aaa!important;right:15px!important;}
             div.photowrap{width:100% !important;}
             div.photowrap > div{width:100% !important;}
             div.photowrap{height:70% !important;}
             div.content {height:20% !important;}
             div.content {width:100% !important;}
+            div.rcontent {overflow:scroll;}
             .modal.modal-fixed-footer{width:100% !important;height:100% !important;top:0px !important;}
         .col.s4.portfolio{
           display:inline-block;
@@ -212,12 +279,26 @@
       }
 
       @media screen and (max-width: 365px) {
+        .myprofile .modal-content{
+          white-space:normal;overflow:auto !important;
+        }
+        .myprofile .myphoto{
+          width:100%;
+        }
+        .myprofile .mycontent{
+          width:100%;
+          overflow:hidden;
+        }
+              .comment.row div{
+                padding-left:20px !important;
+              }
         .popCloseButton{width:80px !imporant;z-index:999999 !important;color:#aaa!important;right:15px!important;}
             div.photowrap{width:100% !important;}
             div.photowrap > div{width:100% !important;}
             div.photowrap{height:70% !important;}
             div.content {height:20% !important;}
             div.content {width:100% !important;}
+            div.rcontent {overflow:scroll;}
             .modal.modal-fixed-footer{width:100% !important;height:100% !important;top:0px !important;}
         .col.s4.portfolio{
           display:inline-block;
@@ -277,11 +358,11 @@
     <!-- Modal Structure -->
     <nav class="nav-extended">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><div class="logo divider"></div><div class="logo flow-text">YoungSun</div></a>
+        <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><div class="logo divider"></div><div class="logo flow-text" style="vertical-align:top">YoungSun</div></a>
         <div class="brand-logo-right right">
           <a href="#" class="logo right flow-text"><i class="material-icons">favorite_border</i></a>
-          <a href="#" class="logo right flow-text"><i class="material-icons">business_center</i></a>
-          <a href="#" class="logo right flow-text"><i class="material-icons">face</i></a>
+          <a href="#" class="logo right flow-text" onclick="totalfilter(3)"><i class="material-icons">business_center</i></a>
+          <a href="#" class="logo right flow-text" onclick="openMyProfile()"><i class="material-icons">face</i></a>
         </div>
       </div>
     </nav>
@@ -295,7 +376,7 @@
         </script>
 
     <div class="row" style="padding:30px 0px 30px 0px;">
-      <div class="col s6 m5" style="text-align:center;"><img class="responsive-img circle s6" src="img/yys.png"/></div>
+      <div class="col s6 m5" style="text-align:center;"><img class="responsive-img circle s6" src="img/yys.jpg"/></div>
       <div class="col s6 m7">
         <div class="row">
           <div class="col s12 m4"><span class="flow-text">YoungSun</span></div>
@@ -304,79 +385,238 @@
         <style>
 
         </style>
+        <script>
+        function totalfilter(c){
+          if(c==1){
+              $(".portfoliolist .project").show();
+              $(".portfoliolist .develop").hide();
+          }else if(c==2){
+
+              $(".portfoliolist .project").hide();
+              $(".portfoliolist .develop").show();
+          }
+          else{
+            $(".portfoliolist").children().show();
+          }
+        }
+        </script>
         <div class="totaltop row">
-          <div class="col m4"><span class="nowrap">게시물</span> <span class="nowrap totalcnt">15</span></div>
-          <div class="col m4"><span class="nowrap">프로젝트</span> <span class="nowrap projectcnt"></span></div>
-          <div class="col m4"><span class="nowrap">연구개발</span> <span class="nowrap privatecnt">5</span></div>
+          <div class="col m4" onclick="totalfilter(3)" style="cursor:pointer"><span class="nowrap">게시물</span> <span class="nowrap totalcnt"></span></div>
+          <div class="col m4" onclick="totalfilter(1)" style="cursor:pointer"><span class="nowrap">프로젝트</span> <span class="nowrap projectcnt"></span></div>
+          <div class="col m4" onclick="totalfilter(2)" style="cursor:pointer"><span class="nowrap">연구개발</span> <span class="nowrap developcnt"></span></div>
         </div>
       </div>
       <div class="comment row">
-        <div class="col s12 m6" style="color:#aaa;font-size:12px;">#Frontend #Backend #Javascript #Java #C++ #Spring #QtFrameWork #EasyPrint #Delphi #C #Angular #React #NodeJS #Printmade</div>
+        <div class="col s12 m6" style="color:#aaa;font-size:12px;"><div>#Frontend #Backend #Javascript #Java #C++ #Spring #QtFrameWork #EasyPrint #Delphi #C #Angular #React #NodeJS #Printmade</div></div>
       </div>
 
     </div>
 
 
     <div class="row total">
-      <div class="col s4"><div>게시물</div><div class="totalcnt">15</div></div>
-      <div class="col s4"><div>프로젝트</div><div class="projectcnt"></div></div>
-      <div class="col s4"><div>게시물</div><div class="privatecnt">15</div></div>
+      <div class="col s4" onclick="totalfilter(3)" style="cursor:pointer"><div>게시물</div><div class="totalcnt"></div></div>
+      <div class="col s4" onclick="totalfilter(1)" style="cursor:pointer"><div>프로젝트</div><div class="projectcnt"></div></div>
+      <div class="col s4" onclick="totalfilter(2)" style="cursor:pointer"><div>연구개발</div><div class="developcnt"></div></div>
     </div>
 
   <div class="row">
     <div class="portfoliolist col s12" >
     </div>
   </div>
+  <style>
+  .myprofile > .modal-content .list {
+    padding:10px;
+  }
+  .myprofile > .modal-content .list > .title{
+    font-size:20px;
+  }
+  .myprofile > .modal-content .list > .pcontent{
+    font-size:12px;
+    padding-left:10px;
+  }
+
+  </style>
     <script>
     var currentSwiper;
+    var fire = 0;
+    function popupDetail(url){
+      fire++;
+      if(fire > 1){
+      window.open(
+        url,
+        '_blank' // <- This is what makes it open in a new window.
+      );
+      fire = 0;
+      }else{
+        setTimeout(function(){
+          fire = 0;
+        },500);
+      }
+    }
     function closePopup(){
+      $(".wrapper > div[class='row']").show();
       $("div[id*='modal']").hide();
+      $(".myprofile").hide();
+      $("#dimmed").hide();
+    }
+    function openMyProfile(){
+      $(".myprofile").show();
+      $("#dimmed").show();
+    }
+    function closeMyProfile(){
+
+        $(".myprofile").hide();
       $("#dimmed").hide();
     }
     function togglePopup(selector){
       if($(selector).css("display") == "none"){
         $(selector).show();
         setTimeout(function(){
+        //  $(".wrapper > div[class='row']").hide();
           currentSwiper = new Swiper(selector+" .photowrap", {
              pagination: '.swiper-pagination',
-             paginationClickable: true
+             paginationClickable: true,
+             onInit:function(){
+               Materialize.Toast.removeAll();
+               Materialize.toast($(selector+ " .swiper-slide-active .descriptions").text(), 5000, 'rounded')
+             },
+             onSlideChangeStart : function(){
+                Materialize.Toast.removeAll();
+                 Materialize.toast($(selector+ " .swiper-slide-active .descriptions").text(), 5000, 'rounded')
+             }
            });
         },1);
         $("#dimmed").show();
         $(".btn").css("z-index","-1");
       }else{
-      $("#dimmed").hide();
+      //  $(".wrapper > div[class='row']").show();
+        $("#dimmed").hide();
         $(selector).hide();
         $(".btn").css("z-index","1");
       }
     }
-      var project = $.ajax({
-        url: "data/project.json",
-        success:function(data){
-          $(".projectcnt").append($(data).length);
-          $(data).each(function(idx){
-            $(".portfoliolist").append('<div onclick="togglePopup(\'#modal'+idx+'\')" class="col s4 portfolio" style="background-image:url('+this.firstImage+');"></div>');
-            $(".popup").append('<div id="modal'+idx+'" class="modal modal-fixed-footer" style="width: 90%;height: 80%;max-height: 100%;display:none;box-shadow:none;z-index:99999;"></div>')
-            var target = "#modal"+idx;
-            $(target).append('<div class="modal-content" style="padding:0px;height:100%;"></div>');
-            $(target+" > div").append('<div class="photowrap" style="height:100%;overflow:hidden;width:70%;float:left;display:inline-block;"></div>');
-            $(target+" > div > .photowrap").append('<div class="photo swiper-wrapper" style="white-space: nowrap;width:70%;float:left;display:inline-block;"></div>');
-
-            for(var i=0;i<this.DetailImages.length;i++){
-              $(target+" > div .photo").append('<div class="swiper-slide" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"></div>');
-            }
-            $(target+" > div> .photowrap").append('<div class="swiper-pagination"></div>');
-
-            $(target+" > div").append('<div class="content" style="width:30%;float:left;display:inline-block;"></div>');
-            $(target+" > div .content").append('<div style="padding:20px;display:block;height:10%;border:0px;font-size:12px;border-color:#eee;border-bottom-width:1px;border-style:solid;">'+this.title+'</div>');
-            $(target+" > div .content").append('<div style="padding:20px;display:block;height:70%;font-size:12px;">'+this.content+'</div>');
-            $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:10%;color:#aaa;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+("#"+this.language.split(",").join(" #"))+'</div>');
-            $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:5%;color:#aaa;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+this.date+'</div>');
-            $(target+" > div .content").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
-
-          })
-        }
+    var totalcount = 0;
+    var shortlist = {"project":[],"develop":[]};
+    function addProfileList(name,title,data,content){
+      $(".myprofile > .modal-content > .mycontent").append("<div class='list "+name+"'></div>")
+      $(".myprofile > .modal-content > .mycontent .list."+name).append("<div class='title'>"+title+"</div>")
+      $(".myprofile > .modal-content > .mycontent .list."+name).append("<div class='pcontent'></div>")
+      $(data[content]).each(function(){
+        $(".myprofile > .modal-content > .mycontent .list."+name+" .pcontent").append("<div class='title' style='display:block;'>"+this.name+" ("+this.date+")</div>")
       })
+    }
+    var project = $.ajax({
+      url: "data/project.json",
+      success:function(data){
+        totalcount += $(data).length;
+        $(".projectcnt").append($(data).length);
+        $(data).each(function(idx){
+          var listelement = {};
+          listelement["name"] = this.title;
+          listelement["date"] = this.date;
+          shortlist["project"].push(listelement);
+          $(".portfoliolist").append('<div onclick="togglePopup(\'#modalProject'+idx+'\')" class="col s4 portfolio project" style="background-image:url('+this.firstImage+');position:relative;"></div>');
+          $(".popup").append('<div id="modalProject'+idx+'" class="modal modal-fixed-footer" style="width: 90%;height: 80%;max-height: 100%;display:none;box-shadow:none;z-index:99999;"></div>')
+          var target = "#modalProject"+idx;
+          $(target).append('<div class="modal-content" style="padding:0px;height:100%;"></div>');
+          $(target+" > div").append('<div class="photowrap" style="height:100%;overflow:hidden;width:70%;float:left;display:inline-block;"></div>');
+          $(target+" > div > .photowrap").append('<div class="photo swiper-wrapper" style="white-space: nowrap;width:70%;float:left;display:inline-block;"></div>');
+
+          for(var i=0;i<this.DetailImages.length;i++){
+            $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
+          }
+          $(target+" > div> .photowrap").append('<div class="-pagination"></div>');
+
+          $(target+" > div").append('<div class="content" style="width:30%;float:left;display:inline-block;"></div>');
+          $(target+" > div .content").append('<div style="padding:20px;display:block;height:10%;border:0px;font-size:12px;border-color:#eee;border-bottom-width:1px;border-style:solid;text-overflow: ellipsis;overflow: hidden;">'+this.title+'</div>');
+          $(target+" > div .content").append('<div class="rcontent" style="padding:20px;display:block;height:70%;font-size:12px;text-overflow: ellipsis;">'+this.content+'</div>');
+          $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:10%;color:#252525;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+("#"+this.language.split(",").join(" #"))+'</div>');
+          $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:5%;color:#aaa;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+this.date+'</div>');
+          $(target+" > div .content").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
+
+        })
+        InitDevelop();
+      }
+    })
+
+
+
+    var develop;
+    function InitDevelop(){
+      develop = $.ajax({
+      url: "data/develop.json",
+      error:function(e){
+        console.log(e);
+      },
+      success:function(data){
+        totalcount += $(data).length;
+        $(".developcnt").append($(data).length);
+        $(data).each(function(idx){
+          var listelement = {};
+          listelement["name"] = this.title;
+          listelement["date"] = this.date;
+          shortlist["develop"].push(listelement);
+          $(".portfoliolist").append('<div onclick="togglePopup(\'#modalDevelop'+idx+'\')" class="col s4 portfolio" style="background-image:url('+this.firstImage+');position:relative;"><i style="opacity:.5;color:#eee;position:absolute;bottom:5px;right:5px;z-index:9999;" class="material-icons">star</i></div>');
+          $(".popup").append('<div id="modalDevelop'+idx+'" class="modal modal-fixed-footer" style="width: 90%;height: 80%;max-height: 100%;display:none;box-shadow:none;z-index:99999;"></div>')
+          var target = "#modalDevelop"+idx;
+          $(target).append('<div class="modal-content" style="padding:0px;height:100%;"></div>');
+          $(target+" > div").append('<div class="photowrap" style="height:100%;overflow:hidden;width:70%;float:left;display:inline-block;"></div>');
+          $(target+" > div > .photowrap").append('<div class="photo swiper-wrapper" style="white-space: nowrap;width:70%;float:left;display:inline-block;"></div>');
+
+          for(var i=0;i<this.DetailImages.length;i++){
+            $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
+          }
+          $(target+" > div> .photowrap").append('<div class="swiper-pagination"></div>');
+
+          $(target+" > div").append('<div class="content" style="width:30%;float:left;display:inline-block;"></div>');
+          $(target+" > div .content").append('<div style="padding:20px;display:block;height:10%;border:0px;font-size:12px;border-color:#eee;border-bottom-width:1px;border-style:solid;text-overflow: ellipsis;overflow: hidden;">'+this.title+'</div>');
+          var contents = "";
+          for(var j = 0;j<this.content.length;j++){
+            contents += "<div style='display:block;text-overflow: ellipsis;'>"+this.content[j]+"</div>"
+          }
+            $(target+" > div .content").append('<div class="rcontent" style="padding:20px;display:block;height:70%;font-size:12px;">'+contents+'</div>');
+          $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:10%;color:#252525;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+("#"+this.language.split(",").join(" #"))+'</div>');
+          $(target+" > div .content").append('<div style="padding:10px 20px 20px 20px;display:block;height:5%;color:#aaa;border:0px;font-size:12px;border-color:#eee;border-top-width:1px;border-style:solid;">'+this.date+'</div>');
+          $(target+" > div .content").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
+
+        })
+
+
+      }
+    })
+              $.when(project,develop).done(function(){
+//style
+/*
+*/
+                var profile = $.ajax({
+                  url: "data/myprofile.json",
+                  success:function(data){
+                    $(".wrapper").prepend('<div class="myprofile modal modal-fixed-footer" style="width: 90%; height: 80%; max-height: 100%; box-shadow: none; z-index: 99999; display:none;"></div>');
+                    $(".myprofile").append("<div class='modal-content' style=''></div>")
+
+                    $(".myprofile > .modal-content").append("<div class='myphoto' style='background-image:url(\"img/profile.jpg\");'></div>")
+                    $(".myprofile > .modal-content").append("<div class='mycontent' style=''></div>")
+                    $(".myprofile .mycontent").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
+
+                    addProfileList("detail",'유영선',data[0],"detail");
+                    addProfileList("prize",'수상내역',data[0],"prize");
+                    shortlist["project"].sort(function(a,b){
+                      return (a.date < b.date) ? -1 :(a.date > b.date) ? 1 : 0;
+                    })
+                    shortlist["develop"].sort(function(a,b){
+                      return (a.date < b.date) ? -1 :(a.date > b.date) ? 1 : 0;
+                    })
+                    addProfileList("project",'프로젝트',shortlist,"project");
+                    addProfileList("develop",'연구개발',shortlist,"develop");
+                    addProfileList("support",'고객지원',data[0],"support");
+                  }
+                })
+
+                $(".totalcnt").append(totalcount);
+              })
+    }
+
+
 //      $(".portfoliolist").append('<div class="col s4"><%= people[i] %></div>');
     </script>
     <div></div>

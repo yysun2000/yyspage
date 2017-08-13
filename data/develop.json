@@ -1,79 +1,224 @@
 [{
-  "title":"Printmade2 내장 스크립트 (C++, Javascript)",
+  "title":"Printmade2 내장 스크립트",
   "date":"2013-01-30 ~ 2013-05-20",
   "content":["- 화면의 변화 없이 프린트메이드 내부 스크립트를 추가함으로써 화면 내용 수정할 수 있는 기능 고안 및 개발",
     "- 예전에 적용된 프린트메이드를 해당 방식으로 변환"],
   "result":"프린트메이드의 단점을 제거",
   "language":"Javascript,C++",
-  "firstImage":"img/develop/innerscript/1.jpg",
+  "firstImage":"img/develop/innerscript/favicon.png",
   "DetailImages":[{
-    "image":"",
+    "image":"img/develop/innerscript/favicon.png",
     "descriptions":""
   }]
 },
 {
-  "title":"Printmade2 ActiveX 개발 (C++) ",
+  "title":"Printmade2 ActiveX 개발",
   "date":"2013-02-10 ~ 2013-03-20",
-  "content":["- Delphi 기반의 Printmade2 ActiveX를 C++ 기반으로 변환 ",
+  "content":[
+    "- 스크롤캡처 방식을 개발함 (스크롤을 돌려서 이미지를 캡처)",
+    "- Delphi 기반의 Printmade2 ActiveX를 C++ 기반으로 변환 ",
     "- 예전에 적용된 프린트메이드를 해당 방식으로 변환"],
   "result":"Delphi 뿐만아니라 C++로 프린트메이드 플러그인 개발이 가능해짐 ",
   "language":"C++",
-  "firstImage":"img/develop/activex/1.jpg",
-  "DetailImages":[{
-    "image":"",
-    "descriptions":""
-  }]
+  "firstImage":"img/develop/activex/favicon.png",
+  "DetailImages":[
+    {
+    "image":"img/develop/activex/1.png",
+    "descriptions":"Printmade3에 포함된 Printmade2의 ActiveX (이름만 변경됨)"
+    },{
+      "image":"img/develop/activex/2.png",
+      "descriptions":"Printmade2의 ActiveX"
+    },{
+      "image":"img/develop/activex/3.png",
+      "descriptions":"Printmade2 ActiveX의 스크롤 인쇄 결과 (부산은행, 중요 데이터 모자이크처리됨)"
+    },{
+      "image":"img/develop/activex/4.png",
+      "descriptions":"Printmade2 ActiveX의 스크롤 인쇄 결과 (부산은행, 중요 데이터 모자이크처리됨)"
+    },{
+      "image":"img/develop/activex/5.png",
+      "descriptions":"Printmade2 ActiveX의 스크롤 인쇄 결과 (부산은행, 중요 데이터 모자이크처리됨)"
+    }
+  ]
 },
 {
-  "title":"Nagosoft 연구개발팀 라이센스 페이지 (NodeJS, Javascript, MongoDB )",
+  "title":"Nagosoft 연구개발팀 라이센스 페이지",
   "date":"2015-04-03 ~ 2015-08-01",
   "content":["- 화면의 변화 없이 프린트메이드 내부 스크립트를 추가함으로써 화면 내용 수정할 수 있는 기능 고안 및 개발 "],
   "result":"라이센스 발급이 효율성 높아짐",
-  "language":"NodeJS, Javascript, MongoDB",
-  "firstImage":"img/develop/license/1.jpg",
+  "language":"NodeJS,Javascript,MongoDB",
+  "firstImage":"img/develop/license/favicon.gif",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/develop/license/1.png",
+    "descriptions":"초기화면"
+  },{
+    "image":"img/develop/license/2.png",
+    "descriptions":"라이센스 리스트"
+  },{
+    "image":"img/develop/license/3.png",
+    "descriptions":"라이센스 Search 기능 화면"
+  },{
+    "image":"img/develop/license/4.png",
+    "descriptions":"라이센스 등록 화면"
   }]
 },
 {
-  "title":"Nagosoft 연구개발팀 지원 사이트 (PHP, Javascript,MySQL,HTML/CSS)",
+  "title":"Nagosoft 연구개발팀 지원 사이트",
   "date":"2015-10-03 ~ 2016-09-01",
   "content":["- Printmade 고객 지원 및 기술지원 홈페이지 개발 "],
   "result":"고객지원팀 업무 효율 증가 및 협업이 가능해짐 ",
-  "language":"PHP, Javascript,MySQL,HTML/CSS",
-  "firstImage":"img/develop/support/1.jpg",
+  "language":"PHP,Javascript,MySQL,HTML/CSS",
+  "firstImage":"img/develop/support/favicon.gif",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/develop/support/1.png",
+    "descriptions":"초기화면"
+  },{
+    "image":"img/develop/support/2.png",
+    "descriptions":"등록화면"
+  },{
+    "image":"img/develop/support/3.png",
+    "descriptions":"초기화면 (데이터가 등록됨)"
+  },{
+    "image":"img/develop/support/4.png",
+    "descriptions":"고객 처리정보 및 상세정보 (고객의 구체적인 부분을 처리함)"
+  },{
+    "image":"img/develop/support/5.png",
+    "descriptions":"고객사별 총 집계 화면"
+  },{
+    "image":"img/develop/support/6.png",
+    "descriptions":"완료된 목록 (실제 데이터이므로 중요자료 모자이크 처리함)"
   }]
 },
 {
-  "title":" Printmade3 Viewer 개발 ( C++ (Qt Framework) )",
+  "title":" Printmade3 Viewer 개발",
   "date":"2015-03-07 ~ 2015-08-30 ",
   "content":["- Qt 기본 제공 프린트 다이얼로그 UI 및 기능 변경","- 내부적으로 커스터마이징이 가능한 스크립트를 추가할 수 있도록 수정"],
   "result":"고객지원팀 업무 효율 증가 및 협업이 가능해짐 ",
-  "language":"C++ (Qt Framework)",
-  "firstImage":"img/develop/viewer/1.jpg",
+  "language":"C++(Qt Framework)",
+  "firstImage":"img/develop/viewer/favicon.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/develop/viewer/1.png",
+    "descriptions":"뷰어 초기화면"
+  },{
+    "image":"img/develop/viewer/2.png",
+    "descriptions":"미리보기 화면"
+  },{
+    "image":"img/develop/viewer/3.png",
+    "descriptions":"클립보드 기능 (클립보드에 해당 그림 데이터가 저장됨)"
+  },{
+    "image":"img/develop/viewer/4.png",
+    "descriptions":"저장화면"
+  },{
+    "image":"img/develop/viewer/5.png",
+    "descriptions":"선택영역화면"
+  },{
+    "image":"img/develop/viewer/6.png",
+    "descriptions":"메모 화면"
+  },{
+    "image":"img/develop/viewer/7.png",
+    "descriptions":"메모 화면"
+  },{
+    "image":"img/develop/viewer/8.png",
+    "descriptions":"환경 설정 화면"
+  },{
+    "image":"img/develop/viewer/9.png",
+    "descriptions":"화면분할 (빨간선 기준으로 페이지가 나뉨)"
   }]
 },
 {
-  "title":"MainStream Mobile 앱 개발(NodeJS, Ionic Framework, HTML/CSS)",
+  "title":"MainStream Mobile 앱 개발",
   "date":"2015-09-23 ~ 2015-12-28 ",
   "content":["- Ionic Framework를 통해서 모바일 UI 개발"],
   "result":"MainStream과 계약 체결 ",
-  "language":"NodeJS, Ionic Framework, HTML/CSS",
-  "firstImage":"img/develop/mainstream/1.jpg",
+  "language":"NodeJS,Ionic Framework,HTML/CSS",
+  "firstImage":"img/develop/mainstream/favicon.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/develop/mainstream/1.jpg",
+    "descriptions":"메인화면"
+  },{
+    "image":"img/develop/mainstream/2.jpg",
+    "descriptions":"작품 목록 페이지"
+  },{
+    "image":"img/develop/mainstream/3.jpg",
+    "descriptions":"작품 상세"
+  },{
+    "image":"img/develop/mainstream/4.jpg",
+    "descriptions":"작품 상세"
+  },{
+    "image":"img/develop/mainstream/5.jpg",
+    "descriptions":"작품 상세(하단)"
+  },{
+    "image":"img/develop/mainstream/6.jpg",
+    "descriptions":"사용 허락"
+  },{
+    "image":"img/develop/mainstream/7.jpg",
+    "descriptions":"사용 허락(하단)"
+  },{
+    "image":"img/develop/mainstream/8.jpg",
+    "descriptions":"신규 신청"
+  },{
+    "image":"img/develop/mainstream/9.jpg",
+    "descriptions":"신규 신청(하단)"
+  },{
+    "image":"img/develop/mainstream/10.jpg",
+    "descriptions":"정산분배"
+  },{
+    "image":"img/develop/mainstream/11.jpg",
+    "descriptions":"정산분배(중간)"
+  },{
+    "image":"img/develop/mainstream/12.jpg",
+    "descriptions":"작품상세 - 분기별"
+  },{
+    "image":"img/develop/mainstream/13.jpg",
+    "descriptions":"작품상세 - 분기별(하단)"
+  },{
+    "image":"img/develop/mainstream/14.jpg",
+    "descriptions":"작품상세 - 작품별"
+  },{
+    "image":"img/develop/mainstream/15.jpg",
+    "descriptions":"작품상세 - 작품별(상세)"
+  },{
+    "image":"img/develop/mainstream/16.jpg",
+    "descriptions":"작품상세 - 지역별"
+  },{
+    "image":"img/develop/mainstream/17.jpg",
+    "descriptions":"작품상세 - 지역별(상세)"
+  },{
+    "image":"img/develop/mainstream/18.jpg",
+    "descriptions":"작품상세 - 지역별(상세)(하단)"
+  },{
+    "image":"img/develop/mainstream/19.jpg",
+    "descriptions":"작품상세 - 기간별(도표)"
+  },{
+    "image":"img/develop/mainstream/20.jpg",
+    "descriptions":"작품상세 - 기간별(하단)"
+  },{
+    "image":"img/develop/mainstream/21.jpg",
+    "descriptions":"작품상세 - 기간별(도표)"
+  },{
+    "image":"img/develop/mainstream/22.jpg",
+    "descriptions":"경영관리"
+  },{
+    "image":"img/develop/mainstream/23.jpg",
+    "descriptions":"경영관리"
+  },{
+    "image":"img/develop/mainstream/24.jpg",
+    "descriptions":"경영관리 - 선급금관리"
+  },{
+    "image":"img/develop/mainstream/25.jpg",
+    "descriptions":"경영관리 - 선급금관리 (하단)"
+  },{
+    "image":"img/develop/mainstream/26.jpg",
+    "descriptions":"초기화면 - 도표 및 툴팁"
+  },{
+    "image":"img/develop/mainstream/27.jpg",
+    "descriptions":"작품상세 - 작품별(상세)"
+  },{
+    "image":"img/develop/mainstream/28.jpg",
+    "descriptions":"초기화면 - 좌측 메뉴"
   }]
 },
 {
-  "title":"Printmade3 Bridge 개발  (C++ (Qt Framework, Win32 API), Javascript(Websocket))",
+  "title":"Printmade3 Bridge 개발 ",
   "date":"2015-01-07 ~ 2015-08-30",
   "content":["- URI Scheme 을 이용한 실행방식 연구 및 개발",
     "- WebSocket 을 통하여 브라우저와 Native 프로그램이 통신하는 방식 연구 및 개발",
@@ -83,40 +228,93 @@
   "result":["Printmade3를 Non-Active 방식으로 변환",
     "다양한 고객사에 납품 (기업은행,신한카드,신한은행,수협은행,시티은행,대구은행,학교알리미,행자부,한우리,유진투자증권,키야트,하나투어)"],
   "language":"C++ (Qt Framework, Win32 API), Javascript(Websocket)",
-  "firstImage":"img/develop/bridge/1.jpg",
+  "firstImage":"img/develop/bridge/favicon.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/develop/bridge/1.png",
+    "descriptions":"개요 : EXE 파일 - 브라우저 통신을 위한 프로그램"
+  },{
+    "image":"img/develop/bridge/2.png",
+    "descriptions":"개요2 : EXE 파일 - 브라우저 통신을 위한 프로그램"
+  },{
+    "image":"img/develop/bridge/3.png",
+    "descriptions":"실제 브라우저와 EXE 통신화면 (1) - URI Scheme으로 PTMBridge 실행"
+  },{
+    "image":"img/develop/bridge/4.png",
+    "descriptions":"실제 브라우저와 EXE 통신화면 (2) - WebSocket을 통한 연결 및 메시지 전달 화면"
+  },{
+    "image":"img/develop/bridge/5.png",
+    "descriptions":"실제 브라우저와 EXE 통신화면 (3) - Bridge를 통해 파일 출력하는 화면"
+  },{
+    "image":"img/develop/bridge/6.png",
+    "descriptions":"실제 브라우저와 EXE 통신화면 (4) - Bridge를 통해 프린트메이드 뷰어를 실행시키는 화면"
   }]
 },
 {
-  "title":"Printmade3 Donut 개발  (C++ (Qt Framework), Javascript(Websocket) )",
+  "title":"Printmade3 Donut 개발",
   "date":"2016-12-20 ~ 2016-02-14 ",
   "content":[
+    "- 프린트메이드 3 설치 체크를 하기 위해 개발됨",
     "- WebSocket과 상주형 로컬서버 프로그램 설계 및 개발",
     "- Cross-Domain 정책을 우회하는 기법 연구 및 개발",
-    "- 웹 브라우저 localStorage 통한 데이터 저장 및 추출 방법 연구 및 개발" ],
+    "- 웹 브라우저 localStorage 통한 데이터 저장 및 추출 방법 연구 및 개발",
+    "- 로컬서버방식을 통한 인증서(SSL)을 이용한 통신 방식 구현" ],
   "result":["Bridge의 단점을 제거"],
-  "language":"C++ (Qt Framework, Win32 API), Javascript(Websocket)",
-  "firstImage":"img/develop/donut/1.jpg",
+  "language":"C++ (Qt Framework, Win32 API),Javascript(Websocket)",
+  "firstImage":"img/develop/donut/favicon.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/develop/donut/1.png",
+    "descriptions":"개요 : 윈도우 서비스 - 브라우저 통신을 위한 프로그램"
+  },{
+    "image":"img/develop/donut/2.png",
+    "descriptions":"윈도우 서비스에 등록된 화면"
+  },{
+    "image":"img/develop/donut/3.png",
+    "descriptions":"윈도우 서비스에 등록된 화면 1 (서비스 관리자)"
+  },{
+    "image":"img/develop/donut/4.png",
+    "descriptions":"윈도우 서비스에 등록된 화면 2 (서비스 관리자)"
+  },{
+    "image":"img/develop/donut/5.png",
+    "descriptions":"실제 프로그램 EXE 파일"
+  },{
+    "image":"img/develop/donut/6.png",
+    "descriptions":"SSL 통신을 위한 인증서(SHA256)"
   }]
 },
 {
-  "title":"easyPrint 개발 (Javascript, NodeJS, HTML5/CSS)",
+  "title":"easyPrint 개발",
   "date":"2016-03-01 ~ 2017-03-30",
   "content":[
     "- HTML을 Canvas 형태로 변환시키는 라이브러리 개발",
     "- 사용자 편의 기능 UI 개발",
     "- 최신 브라우저 및 모바일에서도 작동되도록 개발"  ],
   "result":["HTML5 기반의 프린트 솔루션을 통해서 설치없이 프린트 서비스를 이용 가능","산업은행, 신한은행에서 솔루션 납품"],
-  "language":"Javascript, NodeJS, HTML5/CSS",
-  "firstImage":"img/develop/easyprint/1.jpg",
+  "language":"Javascript,NodeJS,HTML5/CSS",
+  "firstImage":"img/develop/easyprint/favicon.png",
   "DetailImages":[{
-    "image":"",
-    "descriptions":""
+    "image":"img/develop/easyprint/1.png",
+    "descriptions":"초기 설계 내용(기능 내용)"
+  },{
+    "image":"img/develop/easyprint/2.png",
+    "descriptions":"초기 설계 내용(구현)"
+  },{
+    "image":"img/develop/easyprint/3.png",
+    "descriptions":"초기 설계 내용(문서)"
+  },{
+    "image":"img/develop/easyprint/4.png",
+    "descriptions":"초기 설계 내용(기대)"
+  },{
+    "image":"img/develop/easyprint/5.png",
+    "descriptions":"구현완료 - 기본화면"
+  },{
+    "image":"img/develop/easyprint/6.png",
+    "descriptions":"구현완료 - 선택영역 기능"
+  },{
+    "image":"img/develop/easyprint/7.png",
+    "descriptions":"구현완료 - 메모 기능"
+  },{
+    "image":"img/develop/easyprint/8.png",
+    "descriptions":"구현완료 - 확대/축소 기능"
   }]
 },
 {
@@ -124,15 +322,12 @@
   "date":"2017-05-10 ~ 2017-08-30",
   "content":[
     "- easyPrint의 코드를 정리하여 모듈화",
-    "- 기존의 자바스크립트 코드를 ES6으로 변환"
-],
+    "- 기존의 자바스크립트 코드를 ES6으로 변환"],
   "result":["모바일앱으로 변환이 가능해짐 ","프린트메이드 코드 가독성 향상"],
-  "language":"Javascript, NodeJS, HTML5/CSS",
-  "firstImage":"img/develop/printeasy/1.jpg",
+  "language":"Javascript,NodeJS,HTML5/CSS",
+  "firstImage":"img/develop/printeasy/favicon.gif",
   "DetailImages":[{
-    "image":"",
+    "image":"img/develop/printeasy/favicon.gif",
     "descriptions":""
   }]
-}
-
-]
+}]

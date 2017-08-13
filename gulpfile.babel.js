@@ -8,5 +8,5 @@ gulp.task("default",()=>{
     }
   })
   gulp.watch("./*.html",browsersync.reload)
-  gulp.watch(".data/*.json",browsersync.reload)
+  gulp.watch("./data/*.json",browsersync.reload)
 })
