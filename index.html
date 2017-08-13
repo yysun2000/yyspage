@@ -360,7 +360,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><div class="logo divider"></div><div class="logo flow-text" style="vertical-align:top">YoungSun</div></a>
         <div class="brand-logo-right right">
-          <a href="#" class="logo right flow-text"><i class="material-icons">favorite_border</i></a>
+          <a href="#" class="logo right flow-text" onclick="openLove()"><i class="material-icons">favorite_border</i></a>
           <a href="#" class="logo right flow-text" onclick="totalfilter(3)"><i class="material-icons">business_center</i></a>
           <a href="#" class="logo right flow-text" onclick="openMyProfile()"><i class="material-icons">face</i></a>
         </div>
@@ -380,7 +380,7 @@
       <div class="col s6 m7">
         <div class="row">
           <div class="col s12 m4"><span class="flow-text">YoungSun</span></div>
-          <div class="followbutton col s12 m4"><a class="waves-effect waves-light btn flow-text" style="background-color:#3897f0;"><div class="nowrap">팔로우</div></a></div>
+          <div class="followbutton col s12 m4" onclick="openLove()"><a class="waves-effect waves-light btn flow-text" style="background-color:#3897f0;"><div class="nowrap">팔로우</div></a></div>
         </div>
         <style>
 
@@ -439,6 +439,10 @@
     <script>
     var currentSwiper;
     var fire = 0;
+    function openLove(){
+      $(".love").show()
+      $("#dimmed").show();
+    }
     function popupDetail(url){
       fire++;
       if(fire > 1){
@@ -458,6 +462,7 @@
       $("div[id*='modal']").hide();
       $(".myprofile").hide();
       $("#dimmed").hide();
+      $(".love").hide()
     }
     function openMyProfile(){
       $(".myprofile").show();
@@ -542,6 +547,28 @@
 
 
     var develop;
+    function sendMail(){
+      closePopup();
+      $.ajax({
+          url: "http://0sun.net/backup/mail/contact_me.php",
+          type: "POST",
+          data: {
+              name: $("#name").val(),
+              phone: $("#phone").val(),
+              email: $("#email").val(),
+              message: $("#message").val()
+          },
+          cache: false,
+          success: function() {
+            Materialize.Toast.removeAll();
+            Materialize.toast("이메일을 성공적으로 보냈습니다.", 5000, 'rounded');
+          },
+          error: function() {
+            Materialize.Toast.removeAll();
+            Materialize.toast("실패하였습니다.", 5000, 'rounded');
+          },
+      });
+    }
     function InitDevelop(){
       develop = $.ajax({
       url: "data/develop.json",
@@ -588,6 +615,9 @@
 //style
 /*
 */
+
+
+
                 var profile = $.ajax({
                   url: "data/myprofile.json",
                   success:function(data){
@@ -609,6 +639,24 @@
                     addProfileList("project",'프로젝트',shortlist,"project");
                     addProfileList("develop",'연구개발',shortlist,"develop");
                     addProfileList("support",'고객지원',data[0],"support");
+
+
+
+                    $(".wrapper").prepend('<div class="love myprofile modal modal-fixed-footer" style="width: 90%; height: 80%; max-height: 100%; box-shadow: none; z-index: 99999; display:none;"></div>');
+                    $(".love").append("<div class='modal-content' style=''></div>")
+
+                    $(".love > .modal-content").append("<div class='myphoto' style='background-image:url(\"img/profile.jpg\");'></div>")
+                    var content = "<div class='title'>이메일 보내기<br>(cocacolar@nate.com)</div>";
+                    var email = "<div class='pcontent'>e-mail : cocacolar@nate.com</div>";
+                    var title = '<div class="input-field"><input id="name" type="text" class="validate"><label for="first_name">제목</label></div>';
+                    var phone = '<div class="input-field"><input id="phone" type="text" class="validate"><label for="first_name">휴대폰</label></div>';
+                    var email = '<div class="input-field"><input id="email" type="text" class="validate"><label for="first_name">이메일</label></div>';
+                    var textarea = '<div class="input-field"><textarea id="message" class="materialize-textarea"></textarea><label for="textarea1">내용</label></div></div>';
+                    var button = '<button class="btn waves-effect waves-light" style="margin-left: 10px;" type="button" name="action" onclick="sendMail()">Submit<i class="material-icons right">send</i></button>';
+                    content = "<div class='list'>"+content + title + phone + email + textarea  +button +"</div>";
+                    $(".love > .modal-content").append("<div class='mycontent' style=''>"+content+"</div>")
+                    $(".love .mycontent").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
+
                   }
                 })
 
