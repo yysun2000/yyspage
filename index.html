@@ -209,7 +209,7 @@
         }
         .myprofile .mycontent{
           width:100%;
-          overflow:hidden;
+          overflow:scroll;
         }
 
                 .comment.row div{
@@ -249,7 +249,7 @@
         }
         .myprofile .mycontent{
           width:100%;
-          overflow:hidden;
+          overflow:scroll;
         }
               .comment.row div{
                 padding-left:20px !important;
@@ -287,7 +287,7 @@
         }
         .myprofile .mycontent{
           width:100%;
-          overflow:hidden;
+          overflow:scroll;
         }
               .comment.row div{
                 padding-left:20px !important;
@@ -401,7 +401,7 @@
         }
         </script>
         <div class="totaltop row">
-          <div class="col m4" onclick="totalfilter(3)" style="cursor:pointer"><span class="nowrap">게시물</span> <span class="nowrap totalcnt"></span></div>
+          <div class="col m4" onclick="totalfilter(3)" style="cursor:pointer"><span class="nowrap">총 게시물</span> <span class="nowrap totalcnt"></span></div>
           <div class="col m4" onclick="totalfilter(1)" style="cursor:pointer"><span class="nowrap">프로젝트</span> <span class="nowrap projectcnt"></span></div>
           <div class="col m4" onclick="totalfilter(2)" style="cursor:pointer"><span class="nowrap">연구개발</span> <span class="nowrap developcnt"></span></div>
         </div>
@@ -414,7 +414,7 @@
 
 
     <div class="row total">
-      <div class="col s4" onclick="totalfilter(3)" style="cursor:pointer"><div>게시물</div><div class="totalcnt"></div></div>
+      <div class="col s4" onclick="totalfilter(3)" style="cursor:pointer"><div>총 게시물</div><div class="totalcnt"></div></div>
       <div class="col s4" onclick="totalfilter(1)" style="cursor:pointer"><div>프로젝트</div><div class="projectcnt"></div></div>
       <div class="col s4" onclick="totalfilter(2)" style="cursor:pointer"><div>연구개발</div><div class="developcnt"></div></div>
     </div>
@@ -530,7 +530,7 @@
           for(var i=0;i<this.DetailImages.length;i++){
             $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
           }
-          $(target+" > div> .photowrap").append('<div class="-pagination"></div>');
+          $(target+" > div> .photowrap").append('<div class="swiper-pagination"></div>');
 
           $(target+" > div").append('<div class="content" style="width:30%;float:left;display:inline-block;"></div>');
           $(target+" > div .content").append('<div style="padding:20px;display:block;height:10%;border:0px;font-size:12px;border-color:#eee;border-bottom-width:1px;border-style:solid;text-overflow: ellipsis;overflow: hidden;">'+this.title+'</div>');
