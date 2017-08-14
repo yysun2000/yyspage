@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="css/materialize.css"></link>
   <link rel="stylesheet" href="css/swiper.min.css"></link>
   <script src="js/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <![endif]-->
   <script src="js/materialize.js"></script>
   <script src="js/swiper.min.js"></script>
   <style>
@@ -33,6 +36,9 @@
   .nav-extended a{
     height:56px;
     color:black !important;
+  }
+  .ieicon{
+    display:none;
   }
 
   .logo{
@@ -358,11 +364,11 @@
     <!-- Modal Structure -->
     <nav class="nav-extended">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><div class="logo divider"></div><div class="logo flow-text" style="vertical-align:top">YoungSun</div></a>
+        <a href="#" class="brand-logo left"><i class="material-icons" style="margin:0">wb_sunny</i><img class='ieicon' src="img/icon/sun.png"></img><div class="logo divider"></div><div class="logo flow-text" style="vertical-align:top">YoungSun</div></a>
         <div class="brand-logo-right right">
-          <a href="#" class="logo right flow-text" onclick="openLove()"><i class="material-icons">favorite_border</i></a>
-          <a href="#" class="logo right flow-text" onclick="totalfilter(3)"><i class="material-icons">business_center</i></a>
-          <a href="#" class="logo right flow-text" onclick="openMyProfile()"><i class="material-icons">face</i></a>
+          <a href="#" class="logo right flow-text" onclick="openLove()"><i class="material-icons">favorite_border</i><img class='ieicon' src="img/icon/love.png"></img></a>
+          <a href="#" class="logo right flow-text" onclick="totalfilter(3)"><i class="material-icons">business_center</i><img class='ieicon' src="img/icon/bag.png"></img></a>
+          <a href="#" class="logo right flow-text" onclick="openMyProfile()"><i class="material-icons">face</i><img class='ieicon' src="img/icon/face.png"></img></a>
         </div>
       </div>
     </nav>
@@ -463,21 +469,29 @@
       $(".myprofile").hide();
       $("#dimmed").hide();
       $(".love").hide()
+      $("body").css("overflow","")
     }
     function openMyProfile(){
+      $("body").css("overflow","hidden");
       $(".myprofile").show();
       $("#dimmed").show();
     }
     function closeMyProfile(){
 
-        $(".myprofile").hide();
+      $("body").css("overflow","")
+      $(".myprofile").hide();
       $("#dimmed").hide();
     }
     function togglePopup(selector){
+
+      $("body").css("overflow","hidden");
       if($(selector).css("display") == "none"){
         $(selector).show();
         setTimeout(function(){
         //  $(".wrapper > div[class='row']").hide();
+        if(isIE9()){
+
+        }else{
           currentSwiper = new Swiper(selector+" .photowrap", {
              pagination: '.swiper-pagination',
              paginationClickable: true,
@@ -490,6 +504,7 @@
                  Materialize.toast($(selector+ " .swiper-slide-active .descriptions").text(), 5000, 'rounded')
              }
            });
+        }
         },1);
         $("#dimmed").show();
         $(".btn").css("z-index","-1");
@@ -520,7 +535,13 @@
           listelement["name"] = this.title;
           listelement["date"] = this.date;
           shortlist["project"].push(listelement);
-          $(".portfoliolist").append('<div onclick="togglePopup(\'#modalProject'+idx+'\')" class="col s4 portfolio project" style="background-image:url('+this.firstImage+');position:relative;"></div>');
+        //  $(".portfoliolist").append('<div onclick="togglePopup(\'#modalProject'+idx+'\')" class="col s4 portfolio project" style="background-image:url('+this.firstImage+');position:relative;"></div>');
+          if(isIE9()){
+            $(".portfoliolist").append('<img onclick="togglePopup(\'#modalProject'+idx+'\')" src="'+this.firstImage+'" style="width:30%;height:30%;padding:10px;"/>');
+          }else{
+            $(".portfoliolist").append('<div onclick="togglePopup(\'#modalProject'+idx+'\')" class="col s4 portfolio project" style="background-image:url('+this.firstImage+');position:relative;"></div>');
+          }
+
           $(".popup").append('<div id="modalProject'+idx+'" class="modal modal-fixed-footer" style="width: 90%;height: 80%;max-height: 100%;display:none;box-shadow:none;z-index:99999;"></div>')
           var target = "#modalProject"+idx;
           $(target).append('<div class="modal-content" style="padding:0px;height:100%;"></div>');
@@ -528,7 +549,13 @@
           $(target+" > div > .photowrap").append('<div class="photo swiper-wrapper" style="white-space: nowrap;width:70%;float:left;display:inline-block;"></div>');
 
           for(var i=0;i<this.DetailImages.length;i++){
-            $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
+
+            if(isIE9()){
+              $(target+" > div .photo").append('<img src="'+this.DetailImages[i]["image"]+'" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="width:100%;height:100%;"></img><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div>')
+            }else{
+              $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
+            }
+
           }
           $(target+" > div> .photowrap").append('<div class="swiper-pagination"></div>');
 
@@ -560,14 +587,27 @@
           },
           cache: false,
           success: function() {
-            Materialize.Toast.removeAll();
-            Materialize.toast("이메일을 성공적으로 보냈습니다.", 5000, 'rounded');
+              Materialize.Toast.removeAll();
+              Materialize.toast("이메일을 성공적으로 보냈습니다.", 5000, 'rounded');
           },
           error: function() {
-            Materialize.Toast.removeAll();
-            Materialize.toast("실패하였습니다.", 5000, 'rounded');
+              Materialize.Toast.removeAll();
+              Materialize.toast("실패하였습니다.", 5000, 'rounded');
           },
       });
+    }
+
+    function isIE9(){
+      var trident = navigator.userAgent.match(/Trident\/(\d.\d)/i);
+      if(trident !== null){
+        if(trident != null && navigator.userAgent.match(/Trident\/(\d.\d)/i)[1]*1 >= 6){
+          return false; // 일시
+        }else{
+          return true;
+        }
+      }else{
+        return false;
+      }
     }
     function InitDevelop(){
       develop = $.ajax({
@@ -583,7 +623,13 @@
           listelement["name"] = this.title;
           listelement["date"] = this.date;
           shortlist["develop"].push(listelement);
-          $(".portfoliolist").append('<div onclick="togglePopup(\'#modalDevelop'+idx+'\')" class="col s4 portfolio" style="background-image:url('+this.firstImage+');position:relative;"><i style="opacity:.5;color:#eee;position:absolute;bottom:5px;right:5px;z-index:9999;" class="material-icons">star</i></div>');
+
+
+          if(isIE9()){
+              $(".portfoliolist").append('<img onclick="togglePopup(\'#modalProject'+idx+'\')" src="'+this.firstImage+'" style="width:30%;height:30%;padding:10px;"/>');
+          }else{
+            $(".portfoliolist").append('<div onclick="togglePopup(\'#modalDevelop'+idx+'\')" class="col s4 portfolio" style="background-image:url('+this.firstImage+');position:relative;"><i style="opacity:.5;color:#eee;position:absolute;bottom:5px;right:5px;z-index:9999;" class="material-icons">star</i></div>');
+          }
           $(".popup").append('<div id="modalDevelop'+idx+'" class="modal modal-fixed-footer" style="width: 90%;height: 80%;max-height: 100%;display:none;box-shadow:none;z-index:99999;"></div>')
           var target = "#modalDevelop"+idx;
           $(target).append('<div class="modal-content" style="padding:0px;height:100%;"></div>');
@@ -591,7 +637,12 @@
           $(target+" > div > .photowrap").append('<div class="photo swiper-wrapper" style="white-space: nowrap;width:70%;float:left;display:inline-block;"></div>');
 
           for(var i=0;i<this.DetailImages.length;i++){
-            $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
+
+            if(isIE9()){
+              $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
+            }else{
+              $(target+" > div .photo").append('<div class="swiper-slide" onclick="popupDetail(\''+this.DetailImages[i]["image"]+'\');" style="display:inline-block;background-size: contain;background-color:black;background-position:center center;background-repeat:no-repeat;background-image:url('+this.DetailImages[i]["image"]+');width:100%;height:100%;"><div class="descriptions">'+this.DetailImages[i]["descriptions"]+'</div></div>')
+            }
           }
           $(target+" > div> .photowrap").append('<div class="swiper-pagination"></div>');
 
@@ -657,10 +708,60 @@
                     $(".love > .modal-content").append("<div class='mycontent' style=''>"+content+"</div>")
                     $(".love .mycontent").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
 
+                    if(isIE9()){
+                        $(".material-icons").hide();
+                        $(".ieicon").show();
+                        $(".totaltop.row").hide();
+                        $(".waves-effect.waves-light.btn.flow-text").css({"width":"200px","height":"30px"})
+                        $(".comment.row").css("padding-left","100px");
+                        $(".photowrap").css({
+                          "width":"100%",
+                          "height":"",
+                          "display":"block",
+                          "overflow":"visible"
+                        })
+                        $(".photo.swiper-wrapper").css({
+                          "width":"100%",
+                          "white-space":"normal"
+                        })
+                        $(".content").css({
+                          "width":"100%",
+                          "display":"block",
+                          "overflow":"visible"
+                        })
+                        $(".modal.modal-fixed-footer").css({
+                          "top":"0px",
+                          "width":"100%",
+                          "height":"100%"
+                        })
+
+                        $(".love").append('<div class="popCloseButton" style="width:20px;height:20px;position:absolute;top:0;right:5px;" onclick="closePopup()"><i class="material-icons" style="margin:0">close</i></div>');
+                        $(".love .modal-content").append("<div class='mycontent'></div>")
+                        var title = '<div><label for="first_name">제목</label></div><div><input id="name" name="name" type="text"></div>';
+                        var phone = '<div><label for="first_name">휴대폰</label></div><div><input id="phone" name="phone" type="text"></div>';
+                        var email = '<div><label for="first_name">이메일</label></div><div><input id="email" name="email" type="text"></div>';
+                        var textareas = '<div><label for="textarea1">내용</label></div><div><textarea id="message" name="message" style="height:700px;"></textarea></div>';
+                        var button = '<div><input style="margin-left: 10px;" type="submit" value="Submit"></input></div>';
+                        var contentt = "<div class='list'><form id='ieform' action='http://0sun.net/backup/mail/contact_me.php' method='POST'>"+ title + phone + email + textareas  +button +"</form></div>";
+                        console.log(contentt);
+                        try{
+                          $(".love .mycontent").append(contentt);
+                        }catch(e){console.log(e)}
+
+
+                            $(".popCloseButton").css("z-index","999999");
+                            $(".popCloseButton").each(function(){
+
+                              $(this).children().remove();
+                            });
+                            $(".popCloseButton").append("<img src='img/icon/close.png' style='width:20px;height:20px;'/>")
+                    }
                   }
                 })
 
                 $(".totalcnt").append(totalcount);
+
+
               })
     }
 
