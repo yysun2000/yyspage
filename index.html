@@ -601,6 +601,18 @@
       var trident = navigator.userAgent.match(/Trident\/(\d.\d)/i);
       if(trident !== null){
         if(trident != null && navigator.userAgent.match(/Trident\/(\d.\d)/i)[1]*1 >= 6){
+          try{
+          if(navigator.userAgent.match(/MSIE (\d.\d)/i) !== null){
+            if(navigator.userAgent.match(/MSIE (\d.\d)/i)[1]*1 <= 9){
+              return true;
+            }else{
+              return false;
+            }
+
+          }
+          }catch(e){
+
+          }
           return false; // 일시
         }else{
           return true;
